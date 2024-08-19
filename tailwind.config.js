@@ -6,7 +6,14 @@ export default {
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        'primary': '#3B82F6',
+        'dark': '#1D232A',
+        'darkgray': '#A6ADBB',
+        'grey': '#F3F4F6',
+      },
+    },
     screens: {
       'tablet-xl': {'max': '825px'},
       'tablet-lg': {'max': '700px'},
@@ -18,6 +25,7 @@ export default {
   daisyui: {
     themes: ["light", "dark", "cupcake"],
   },
+  darkMode: ['class', '[data-theme="dark"]'],
   plugins: [
     daisyui,
   ],

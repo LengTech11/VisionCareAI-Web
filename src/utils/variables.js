@@ -1,15 +1,18 @@
-import VisionCareAILogoPNG from '../assets/visioncareai-logo.png'
-import VisionCareAILogoJPEG from '../assets/visioncareai-logo.jpeg'
+import VisionCareAILogo from '../assets/visioncareai-logo.png'
 import Cam from '../assets/cambodia-flag.png'
 import Eng from '../assets/english-flag.png'
 import FacebookIcon from '../assets/socials/facebook.png'
 import TelegramIcon from '../assets/socials/telegram.png'
 import LinkedInIcon from '../assets/socials/linkedin.png'
 import GetMobileAppIcon from '../assets/getmobileapp.png'
+import AppStoreImage from '../assets/getonappstore.png'
+import PlaystoreImage from '../assets/getongoogle.webp'
+
+export const GetOnAppStoreImg = AppStoreImage
+export const GetOnPlaystoreImg = PlaystoreImage
 
 export const titles = ["VisionCare AI", "We protect your eyes"]
-export const footerLogo = VisionCareAILogoPNG
-export const navbarLogo = VisionCareAILogoJPEG
+export const VisioncareLogo = VisionCareAILogo
 
 export const EnglishFlag = Eng
 export const CambodiaFlag = Cam
@@ -87,31 +90,64 @@ export const footerData = {
 
 export const slideData = [
     {
-        image: "",
+        image: "1",
         content: {
             title: "Laboratory",
             description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque, voluptatem sit. Quae asperiores ullam quaerat. Ipsum est iure culpa soluta? Enim ipsam reprehenderit ea voluptatibus, minima aliquam magnam vel vitae!. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque, voluptatem sit. Quae asperiores ullam quaerat."
         }   
     },
     {
-        image: "",
+        image: "2",
         content: {
             title: "Diagnosis",
             description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque, voluptatem sit. Quae asperiores ullam quaerat. Ipsum est iure culpa soluta? Enim ipsam reprehenderit ea voluptatibus, minima aliquam magnam vel vitae!. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque, voluptatem sit. Quae asperiores ullam quaerat."
         }   
     },
     {
-        image: "",
+        image: "3",
         content: {
             title: "Eyes Decase",
             description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque, voluptatem sit. Quae asperiores ullam quaerat. Ipsum est iure culpa soluta? Enim ipsam reprehenderit ea voluptatibus, minima aliquam magnam vel vitae!. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque, voluptatem sit. Quae asperiores ullam quaerat."
         }   
     },
     {
-        image: "Eyes Consultant",
+        image: "4",
         content: {
-            title: "Eyes Decase",
+            title: "Eyes Consultant",
             description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque, voluptatem sit. Quae asperiores ullam quaerat. Ipsum est iure culpa soluta? Enim ipsam reprehenderit ea voluptatibus, minima aliquam magnam vel vitae!. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque, voluptatem sit. Quae asperiores ullam quaerat."
         }   
     }
+]
+
+export const ourTeamData = [
+    {
+        name: "SokLeng",
+        image: "",
+        position: "CEO,Founder of Visioncare AI"   
+    },
+    {
+        name: "Sambo",
+        image: "",
+        position: "CEO,Founder of Visioncare AI"   
+    },
+    {
+        name: "Kim Chhiv",
+        image: "",
+        position: "CEO,Founder of Visioncare AI"
+    },
+    {
+        name: "Sambath",
+        image: "",
+        position: "CEO,Founder of Visioncare AI"
+    },
+    {
+        name: "Ratana",
+        image: "",
+        position: "CEO,Founder of Visioncare AI"
+    },
+    {
+        name: "Bondeth",
+        image: "",
+        position: "CEO,Founder of Visioncare AI"
+    },
 ]
