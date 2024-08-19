@@ -14,6 +14,16 @@ export const navbarLogo = VisionCareAILogoJPEG
 export const EnglishFlag = Eng
 export const CambodiaFlag = Cam
 
+export const motionButton = {
+    whileHover: {
+        scale: 1.2, 
+        transition: { duration: 1 }
+    },
+    whileTap: {
+        scale: 0.9 
+    }
+}
+
 export const navbarData = [
     {
         label: "Home",
@@ -74,3 +84,34 @@ export const footerData = {
     getmobileappImg: GetMobileAppIcon,
     copyright: "@2024-2025 Visioncare AI. All Right Reserved"
 }
+
+export const slideData = [
+    {
+        image: "",
+        content: {
+            title: "Laboratory",
+            description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque, voluptatem sit. Quae asperiores ullam quaerat. Ipsum est iure culpa soluta? Enim ipsam reprehenderit ea voluptatibus, minima aliquam magnam vel vitae!. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque, voluptatem sit. Quae asperiores ullam quaerat."
+        }   
+    },
+    {
+        image: "",
+        content: {
+            title: "Diagnosis",
+            description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque, voluptatem sit. Quae asperiores ullam quaerat. Ipsum est iure culpa soluta? Enim ipsam reprehenderit ea voluptatibus, minima aliquam magnam vel vitae!. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque, voluptatem sit. Quae asperiores ullam quaerat."
+        }   
+    },
+    {
+        image: "",
+        content: {
+            title: "Eyes Decase",
+            description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque, voluptatem sit. Quae asperiores ullam quaerat. Ipsum est iure culpa soluta? Enim ipsam reprehenderit ea voluptatibus, minima aliquam magnam vel vitae!. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque, voluptatem sit. Quae asperiores ullam quaerat."
+        }   
+    },
+    {
+        image: "Eyes Consultant",
+        content: {
+            title: "Eyes Decase",
+            description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque, voluptatem sit. Quae asperiores ullam quaerat. Ipsum est iure culpa soluta? Enim ipsam reprehenderit ea voluptatibus, minima aliquam magnam vel vitae!. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque, voluptatem sit. Quae asperiores ullam quaerat."
+        }   
+    }
+]

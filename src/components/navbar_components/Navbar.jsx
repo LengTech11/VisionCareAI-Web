@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { CambodiaFlag, EnglishFlag, navbarData, navbarLogo, titles } from "../../utils/variables";
+import { CambodiaFlag, EnglishFlag, motionButton, navbarData, navbarLogo, titles } from "../../utils/variables";
 import { motion } from "framer-motion";
 import TitleTransition from "./TitleTransition";
 import Drawer from "./Drawer";
@@ -8,14 +8,6 @@ import { Link } from "react-router-dom";
 export default function Navbar(props) {
 
     const [isEnglish, setIsEnglish] = useState(true) 
-
-    const motionHover = {
-        scale: 1.2, 
-        transition: { duration: 1 }
-    }
-    const motionTap = {
-        scale: 0.9 
-    }
 
     return (
         <div className="flex justify-between items-center shadow-md px-4 bg-white phone-xl:flex-col phone-xl:py-4">
@@ -43,14 +35,14 @@ export default function Navbar(props) {
                     </div>
                     : <motion.div 
                         className="px-4 py-2 text-sm rounded-md cursor-pointer border-2 border-blue-500 text-blue-500 hover:bg-blue-500 hover:text-white" 
-                        whileHover={motionHover}
-                        whileTap={motionTap}
+                        whileHover={motionButton.whileHover}
+                        whileTap={motionButton.whileTap}
                       >
                         Login
                     </motion.div>}
                     {isEnglish ? 
-                    <motion.img src={CambodiaFlag} alt="Cambodia Flag" onClick={()=>setIsEnglish(false)} whileHover={motionHover} whileTap={motionTap}/> 
-                    : <motion.img src={EnglishFlag} alt="English Flag" onClick={()=>setIsEnglish(true)} whileHover={motionHover} whileTap={motionTap}/>}
+                    <motion.img src={CambodiaFlag} alt="Cambodia Flag" onClick={()=>setIsEnglish(false)} whileHover={motionButton.whileHover} whileTap={motionButton.whileTap}/> 
+                    : <motion.img src={EnglishFlag} alt="English Flag" onClick={()=>setIsEnglish(true)} whileHover={motionButton.whileHover} whileTap={motionButton.whileTap}/>}
                     <Drawer/>
                 </div>
             </div>

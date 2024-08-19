@@ -1,4 +1,4 @@
-import { navbarData } from "../../utils/variables"
+import { motionButton, navbarData } from "../../utils/variables"
 import { motion } from "framer-motion"
 
 export default function Drawer() {
@@ -20,8 +20,8 @@ export default function Drawer() {
               htmlFor="my-drawer-4" 
               aria-label="close sidebar" 
               className="absolute top-2 right-2 p-2 h-10 w-10 rounded-full bg-blue-500 text-white cursor-pointer drawer-overlay material-icons"
-              whileHover={{ scale: 1.2, transition: { duration: 1 } }}
-              whileTap={{ scale: 0.9 }}
+              whileHover={motionButton.whileHover}
+              whileTap={motionButton.whileTap}
             >
               close
             </motion.label>
