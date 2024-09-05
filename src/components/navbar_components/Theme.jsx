@@ -1,5 +1,5 @@
 import { useContext } from "react"
-import { ThemeContext } from "../ThemeProvider"
+import { ThemeContext } from "../../hooks/ThemeProvider"
 
 export default function Theme() {
     const { isDarkMode, toggleTheme } = useContext(ThemeContext)

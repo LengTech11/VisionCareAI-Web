@@ -13,7 +13,7 @@ export default function ThemeProvider({ children }) {
             setIsDarkMode(true)
         } else {
             document.documentElement.setAttribute('data-theme', 'light') 
-            setIsDarkMode(false)  
+            setIsDarkMode(false) 
         }
     }, [])
 

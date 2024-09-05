@@ -1,16 +1,13 @@
-import Footer from "../components/footer_components/Footer"
 import SlideCard from "../components/home_components/SlideCard"
-import Navbar from "../components/navbar_components/Navbar"
-import { motionButton, ourTeamData, slideData } from "../utils/variables"
+import { AboutusPoster, motionButton, ourTeamData, slideData } from "../utils/variables"
 import { motion } from "framer-motion"
 
 export default function AboutPage(){
     return (
     <>
-        <Navbar isAuth={false}/>
         <div>
-            {/* Unkown Section */}
-            <div className="h-[500px] w-full bg-grey dark:bg-dark"/>
+            {/* Poster Section */}
+            <img src={AboutusPoster} alt="aboutus poster" className="h-[400px] w-full"/>
             {/* Info Section */}
             <div className="my-5">
             {slideData.map((item, index) => (
@@ -18,7 +15,7 @@ export default function AboutPage(){
                     image = {item.image}
                     title = {item.content.title}
                     description = {item.content.description}
-                    className={`${index%2 !== 0 && 'flex-row-reverse'}`}
+                    className={`${index%2 !== 0 && 'flex-row-reverse'} [&>img]:w-[35%] [&>div]:w-[65%] px-20`}
                 />
             ))} 
             </div>
@@ -44,7 +41,6 @@ export default function AboutPage(){
                 </motion.button>
             </div>
         </div>
-        <Footer/>
     </>
     )
 }

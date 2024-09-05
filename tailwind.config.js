@@ -12,6 +12,7 @@ export default {
         'dark': '#1D232A',
         'darkgray': '#A6ADBB',
         'grey': '#F3F4F6',
+        'sliver': '#6B7280'
       },
     },
     screens: {
