@@ -8,6 +8,8 @@ import NewsPage from './pages/NewsPage.jsx'
 import DiscoverPage from './pages/DiscoverPage.jsx'
 import ContactPage from './pages/ContactPage.jsx'
 import ThemeProvider from './components/ThemeProvider.jsx'
+import LoginPage from './pages/LoginPage.jsx'
+import RegisterPage from './pages/RegisterPage.jsx'
 
 const routers = createBrowserRouter([
   {
@@ -29,6 +31,14 @@ const routers = createBrowserRouter([
   {
     path: "/contact",
     element: <ContactPage/>
+  },
+  {
+    path: "/login",
+    element: <LoginPage/>
+  },
+  {
+    path: "/register",
+    element: <RegisterPage/>
   }
 ])
 
