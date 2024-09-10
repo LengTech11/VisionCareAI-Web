@@ -35,12 +35,12 @@ const LoginForm = ({ setMessage, navigate }) => {
           <label className="block text-gray-700 text-sm font-bold mb-2">Password</label>
         </div>
         <input
-          className="text-gray-700 border border-gray-300 rounded py-2 px-4 block w-full focus:outline-2 focus:outline-blue-700"
-          type="password"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-          required
-        />
+            className="text-gray-700 border border-gray-300 rounded py-2 px-4 block w-full focus:outline-2 focus:outline-blue-700"
+            type="password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+            required
+          />
         <a
           href="#"
           className="text-xs text-gray-500 hover:text-gray-900 text-end w-full mt-2"
