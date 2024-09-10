@@ -7,6 +7,7 @@ import AboutPage from './pages/AboutPage.jsx'
 import NewsPage from './pages/NewsPage.jsx'
 import DiscoverPage from './pages/DiscoverPage.jsx'
 import ContactPage from './pages/ContactPage.jsx'
+import ThemeProvider from './components/ThemeProvider.jsx'
 import LoginPage from './pages/LoginPage.jsx'
 import RegisterPage from './pages/RegisterPage.jsx'
 
@@ -43,6 +44,8 @@ const routers = createBrowserRouter([
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <RouterProvider router={routers}/>
+    <ThemeProvider>
+      <RouterProvider router={routers}/>
+    </ThemeProvider>
   </StrictMode>
 )

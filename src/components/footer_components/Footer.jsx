@@ -1,13 +1,13 @@
 import { Link } from "react-router-dom";
-import { footerData, footerLogo, titles } from "../../utils/variables";
+import { footerData, VisioncareLogo, titles } from "../../utils/variables";
 import FooterList from "./FooterList";
 
 export default function Footer() {
     return (
-        <div className="p-5 text-white bg-slate-700">
+        <div className="p-5 text-white bg-dark dark:text-darkgray">
             <div className="flex justify-between items-start tablet-md:flex-col tablet-md:items-center">
                 <div className="flex flex-col items-center mx-5 tablet-xl:hidden">
-                    <img src={footerLogo} height={150} width={150}/>
+                    <img src={VisioncareLogo} height={150} width={150}/>
                     <p className="text-xl mt-2">{titles[0]}</p>
                 </div>
                 <FooterList label="Explore" list={footerData.explore}/>
