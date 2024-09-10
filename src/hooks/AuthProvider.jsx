@@ -15,6 +15,7 @@ export default function AuthProvider({ children }) {
         //Check if token exists in localStorage
         const token = localStorage.getItem("token")
         if(token) setIsAuthenticated(true)
+        console.log("test")
     },[])
 
     const login = (token) => {
