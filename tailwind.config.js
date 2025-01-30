@@ -21,6 +21,7 @@ export default {
       'tablet-md': {'max': '635px'},
       'phone-xl': {'max': '400px'},
       'phone-lg': {'max': '460px'},
+      'monitor': {'min': '1600px'}
     }
   },
   daisyui: {
@@ -29,5 +30,6 @@ export default {
   darkMode: ['class', '[data-theme="dark"]'],
   plugins: [
     daisyui,
+    require('@tailwindcss/line-clamp'),
   ],
 }

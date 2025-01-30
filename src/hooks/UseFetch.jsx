@@ -1,8 +1,8 @@
 import axios from "axios"
 import { useState, useEffect } from "react"
 
-const useFetch = (url) => {
-    const [data,setData] = useState()
+const useFetch = (url, method="GET", body=null, token=null) => {
+    const [data, setData] = useState()
     const [loading, setLoading] = useState(true)
     const [error, setError] = useState(null)
 
@@ -11,7 +11,16 @@ const useFetch = (url) => {
         
         const fetchdata = async () => {
             try {
-                const response = await axios.get(url, { signal: controller.signal })
+                const config = { 
+                    method, 
+                    url,
+                    data: body,
+                    headers: {
+                        "Authorization": token && `Bearer ${token}`,
+                        "Content-Type": "application/json"
+                    }
+                }
+                const response = await axios(config)
                 setData(response.data.data)
             } catch(error) {
                 if(axios.isCancel(error)) {
@@ -30,7 +39,7 @@ const useFetch = (url) => {
         fetchdata()
 
         return () => controller.abort()
-    },[url])    
+    },[url, method, body, token])    
 
     return { data, loading, error }
 } 

@@ -1,11 +1,16 @@
 import { Outlet } from "react-router"
-import Navbar from "./components/navbar_components/Navbar"
-import Footer from "./components/footer_components/Footer"
+import Navbar from "./components/header/Navbar"
+import Footer from "./components/footer/Footer"
+import { useAuth } from "./hooks/AuthProvider"
+import ScrollProgressBar from "./components/utilities/ScrollProgressBar"
 
 export default function Layout() {
+    const { isAuthenticated, token } = useAuth()
+
     return ( 
         <div>
-            <Navbar isAuth={true}/>
+            <ScrollProgressBar/>
+            <Navbar isAuth={isAuthenticated} token={token}/>
             <main>
                 <Outlet/>
             </main>

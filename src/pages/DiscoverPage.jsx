@@ -1,10 +1,47 @@
-import DiseaseCard from '../components/discover_components/DiseaseCard'
+import DiseaseCard from '../components/discover/DiseaseCard.jsx'
 import useFetch from '../hooks/UseFetch'
-import { diseaseApi } from '../utils/api'
-import { DiscoverPoster } from '../utils/variables'
+import { diseaseApi } from '../api/api.js'
+import { DiscoverPoster } from '../constants/constant'
+import CataractImg from "../assets/diseases/cataract.jpg"
+import DiabeticImg from "../assets/diseases/diabetic.jpeg"
+import GluacomaImg from "../assets/diseases/glaucoma.jpg"
+import NormalImg from "../assets/diseases/normal.jpg"
+import { useNavigate } from 'react-router'
 
 export default function DiscoverPage() {
-    const { data, loading, error } = useFetch(diseaseApi)
+    const { data, loading, error } = useFetch(diseaseApi, "GET")
+    const navigate = useNavigate()
+
+    const getImageForDisease = (title) => {
+        switch (title) {
+            case "Cataract":
+                return CataractImg;
+            case "Glaucoma":
+                return GluacomaImg;
+            case "Normal":
+                return NormalImg;
+            case "Diabetic_retinopathy":
+                return DiabeticImg;
+        }
+    }
+
+    const getLinkForDisease = (title) => {
+        switch (title) {
+            case "Cataract":
+                return "https://en.wikipedia.org/wiki/Cataract"
+            case "Glaucoma":
+                return "https://en.wikipedia.org/wiki/Glaucoma"
+            case "Normal":
+                return "https://en.wikipedia.org/wiki/Eye";
+            case "Diabetic_retinopathy":
+                return "https://en.wikipedia.org/wiki/Diabetic_retinopathy"
+        }
+    }
+
+    const handleCardClick = (title) => {
+        const externalLink = getLinkForDisease(title)
+        window.open(externalLink, '_blank')
+    }
 
     return (
         <div>
@@ -19,10 +56,11 @@ export default function DiscoverPage() {
                    {data && data.length > 0 ? (
                         data.map((item) => (
                             <DiseaseCard 
-                                key={item.id}
-                                image="https://miro.medium.com/v2/resize:fit:952/0*jqH0JigQrjhIy4V4"
-                                title={item.title}
-                                description={item.description}
+                                key={item.id} 
+                                description={item.description} 
+                                image={getImageForDisease(item.title)}
+                                title={item.title === "Diabetic_retinopathy" ? "Diabetic Retinopathy" : item.title} 
+                                onClick={() => handleCardClick(item.title)}
                             />
                         ))
                    ) : (!loading && !error && <p>No data available</p>) }

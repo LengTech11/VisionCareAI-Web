@@ -1,13 +1,16 @@
-import SlideCard from "../components/home_components/SlideCard"
-import { AboutusPoster, motionButton, ourTeamData, slideData } from "../utils/variables"
-import { motion } from "framer-motion"
+import SlideCard from "../components/home/SlideCard"
+import { AboutusPoster, ourTeamData, slideData } from "../constants/constant"
+import RoundButton from "../components/utilities/roundButton"
+import { useNavigate } from "react-router"
 
 export default function AboutPage(){
+
+    const navigate = useNavigate()
+
     return (
-    <>
         <div>
             {/* Poster Section */}
-            <img src={AboutusPoster} alt="aboutus poster" className="h-[400px] w-full"/>
+            <img src={AboutusPoster} alt="aboutus poster" className="h-[400px] w-full mt-1 monitor:h-[600px]"/>
             {/* Info Section */}
             <div className="my-5">
             {slideData.map((item, index) => (
@@ -23,24 +26,19 @@ export default function AboutPage(){
             <div className="flex flex-col items-center bg-grey dark:bg-dark">
                 <div className="w-full grid grid-cols-3 place-items-center gap-5 tablet-lg:grid-cols-2 phone-lg:grid-cols-1">
                 {ourTeamData.map((item, index) => (
-                    <div className="size-[230px] rounded-full my-3 overflow-hidden shadow-lg bg-white dark:bg-dark tablet-md:size-[215px] phone-lg:size-[300px]">
-                        <div className="w-full h-2/3 bg-primary"/>
+                    <div className="size-[240px] rounded-full my-3 overflow-hidden shadow-lg bg-white dark:bg-dark tablet-md:size-[215px] phone-lg:size-[300px]" key={index}>
+                        <div className="w-full h-2/3 bg-top bg-cover bg-no-repeat" style={{backgroundImage: `url(${item.image})`}}/>
                         <div className="w-full h-1/3 text-xs flex flex-col items-center justify-start pt-3 tablet-md:text-[10px] phone-lg:text-sm">
-                            <p>{item.name}</p>
+                            <p className="text-md font-bold mb-1">{item.name}</p>
                             <p>{item.position}</p>
                         </div>
                     </div>
                 ))}
                 </div>
-                <motion.button 
-                    whileHover={motionButton.whileHover}
-                    whileTap={motionButton.whileTap}
-                    className="px-3 py-2 my-10 text-sm rounded-md text-white bg-primary"
-                >
-                    Contact Us
-                </motion.button>
+                <div className="mt-7 mb-10">
+                    <RoundButton label="Contact Our Team" onClick={() => navigate("/contact")}/>      
+                </div>      
             </div>
         </div>
-    </>
     )
 }
